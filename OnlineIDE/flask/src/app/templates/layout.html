@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>Online IDE</title>
+        <!-- jquery -->
+        <script src="{{ url_for('static', filename='js/jquery-3.6.3.min.js') }}"></script>
+        
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
+        <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
+
+        <!-- ace -->
+        <script src="{{ url_for('static', filename='js/ace/ace.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ace/theme-tomorrow_night_bright.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ace/ext-language_tools.min.js') }}"></script>
+
+        <!-- jstree -->
+        <script src="{{ url_for('static', filename='js/jstree/jstree.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/jstree/default/style.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/jstree/dark/style.min.css') }}">
+
+        <!-- socket -->
+        <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

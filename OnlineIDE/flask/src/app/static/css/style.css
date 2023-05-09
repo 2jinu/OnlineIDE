@@ -1,0 +1,211 @@
+:root {
+    --bg-color: #FFFFFF;
+    --sub-bg-color: #FFFFFF;
+    --text-color: #333333;
+    --border-color: #333333;
+
+    --btn-normal-hover-color: #333333;
+
+    --console-color: #FFFFFF;
+
+    --main-color: #6950A1;
+    --red-color: #DC3545;
+    --sub-color: #EF5BA1;
+
+    --invert: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5px;
+}
+
+body.dark {
+    --bg-color: #0F0F0F;
+    --sub-bg-color: #27282B;
+    --text-color: #FFFFFF;
+    --border-color: #27282B;
+
+    --btn-normal-hover-color: #808080;
+
+    --console-color: #000000;
+
+    --sub-color: #27282B;
+
+    --invert: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {background-color: var(--bg-color);}
+textarea {resize: none;}
+textarea:focus-visible {outline: none;}
+.jstree-themeicon-custom {filter: invert(var(--invert));}
+.btn-option {color: var(--text-color);}
+.btn-option:hover {background-color: var(--btn-normal-hover-color);color: #FFFFFF;}
+.btn:focus {box-shadow: none;}
+.btn-run {color:#28a745;border-color:#28a745;}
+.btn-run:hover {background-color:#28a745;}
+.btn-stop {color:#DC3545;border-color:#DC3545;}
+.btn-stop:hover {background-color:#DC3545;}
+
+.editor-header {
+    color: var(--text-color);
+    background-color: var(--sub-bg-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    height: 40px;
+}
+
+.editor-footer {
+    color: var(--text-color);
+    padding: 5px 10px;
+    font-weight: 350;
+    background-color: var(--sub-bg-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.output-interface {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60px;
+    background-color: var(--sub-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0px;
+}
+
+.output-interface > button {
+    border: 0px;
+    border-radius: 0px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+#output {
+    width: calc(100% - 60px);
+    color: var(--text-color);
+    padding: 10px 15px;
+    background-color: var(--console-color);
+    border: 1px solid var(--border-color);
+    border-top: 0px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* jstree */
+.jstree-contextmenu {
+    z-index: 100;
+}
+
+
+/***********************/
+.tab-nav {
+    display: flex;
+    overflow: auto;
+}
+.tab-nav .add-tab {
+    width: 40px;
+}
+.tab-nav .tab:not(.add-tab) {
+    width: 100px;
+    display: block;
+}
+.tab-nav .tab {
+    font-size: 12px;
+    position: relative;
+    flex-shrink: 0;
+    padding: 10px 8px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.tab-nav .tab:not(.add-tab):after  {
+    content: '';
+    height: 50%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 25%;
+    background-color: grey;
+}
+.tab-nav .tab.active {
+    color: var(--main-color);
+}
+.tab-nav .tab:hover {
+    background-color : rgba(0,0,0,0.4);
+}
+.tab-close {
+    width: 15px;
+    height: 15px;
+}
+.tab-close:hover {
+    background-color : rgba(255,255,255,0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    background-color: var(--sub-bg-color);
+    color: var(--text-color);
+    min-width: 320px;
+}
+
+.modal-header {
+    border: 0px;
+    justify-content: center;
+}
+
+.close {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+td {
+    padding: 10px 5px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+#input-command {
+    color: var(--text-color);
+    background-color: var(--console-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    height: 33px;
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.em {
+    font-style: italic;
+}

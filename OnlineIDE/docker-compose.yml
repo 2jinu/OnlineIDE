@@ -1,0 +1,46 @@
+version: "3"
+services:
+  ide:
+    build: ./flask
+    image: ide:latest
+    container_name: ide
+    ports:
+      - 5000:5000
+    environment:
+      - REDIS_URL=redis://cache:6379
+    volumes:
+      - ./flask/src:/src
+      - /run:/run
+      - /tmp:/tmp
+    command: [gunicorn, --worker-class, eventlet, --bind, 0.0.0.0:5000, wsgi:app]
+    networks:
+      default:
+      internal:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - ide
+    networks:
+      default:
+      internal:
+
+  cache:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    volumes:
+      - ./redis:/data
+    networks:
+      internal:
+
+networks:
+  default:
+  internal:
+    internal: true
